@@ -113,8 +113,6 @@ except Exception as e:
 # --- HERO SECTION ---
 col1, col2 = st.columns([3, 1])
 with col1:
-    st.title("🚀 Lou's Agency: FanLens")
-    st.caption("PROPRIETARY INTELLIGENCE ENGINE v1.0")
     
     st.markdown("### Turning Viral Noise into Business Strategy.")
     st.markdown("""
@@ -126,13 +124,6 @@ with col1:
     3.  **🛍️ Merch Prediction:** Identify rising cultural trends to capitalize on real-time demand.
     """)
 
-with col2:
-    st.info(
-        "**Built by Louis**\n\n"
-        "Full-Stack Developer & \n"
-        "Political Science Major\n\n"
-        "Open for Roles: 2025"
-    )
 
 # INSTRUCTIONS
 st.success("""
