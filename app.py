@@ -287,36 +287,40 @@ if st.button("✨ Generate Report", type="primary"):
         {general_sample}
         
         **LOGIC FRAMEWORK (The Commitment Index):**
-        * High Share Counts = **Advocacy** (The narrative is spreading).
+        * **Share Rate** = (Shares / Likes).
+        * High Share Rate (>15%) = **Advocacy** (Viral Movement).
         * High General Noise without Virality = **Stagnation**.
         
         Produce a strategic memo using the structure below.
         
         **OUTPUT FORMAT (Strict Markdown):**
         
-   ### 📈 The Dominant Trend
+        ### 📈 The Dominant Trend
         (Synthesize the narrative. Does the 'Viral' story align with the 'Organic' sentiment?
          * **The Verdict:** (One sentence summary.)
          * **The Evidence:** (Group by team. Limit to Top 3 quotes per team.
-           **CRITICAL FORMATTING RULES:**
-           1. For **Viral Hits**, calculate and display the **Share Rate** (e.g. "Quote" (**45% Share Rate**)).
-           2. For **General Chatter**, do NOT show metrics or labels. Just show the quote.
+           **FORMATTING RULES:**
+           - Use blockquotes (>) for EVERY quote.
+           - **BOLD** the Share Rate stats (e.g. **45% Share Rate**).
            
            * **Team A:**
              * > "Quote" (**44% Share Rate**)
              * > "Quote" (Organic Sentiment)
            * **Team B:**
-             * > "Quote"))
+             * > "Quote" (Organic Sentiment)))
         
         ### 🧠 Cultural Drivers
         (Decode the emotional engine. Is this trend driven by **Validation** (fans projecting identity via Shares) or **Friction** (fans debating controversy via Comments)?
-         Use the **engagement metrics** to prove which specific emotion is fueling the algorithm.)
+         Use the **calculated Share Rates** to prove which specific emotion is fueling the algorithm.)
         
         ### 🎯 Strategic Opportunity
-        (Identify a **Strategic Opening** or **Narrative Pivot**.
-         Instead of dictating a specific post, define the *angle* the brand should adopt to align with (or correct) this sentiment.
-         * **The Pivot:** (1-2 sentences on the new direction)
-         * **The Payoff:** (Why this will work for this specific audience))
+        (Group recommendations by Team.)
+        * **Team A:**
+             * **The Pivot:** (1 sentence direction on the angle the brand should adopt)
+             * **The Payoff:** (Why this will work for this specific audience)
+        * **Team B:**
+             * **The Pivot:** (1 sentence direction)
+             * **The Payoff:** (Why it works)
         """
         
         with st.spinner(f"Analyzing Narrative Gaps for: {teams_list}..."):
