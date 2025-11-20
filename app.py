@@ -178,10 +178,10 @@ st.markdown("---")
 chart1, chart2 = st.columns(2)
 
 with chart1:
-    st.markdown("##### 📅 Post Volume (Weekly)")
+    st.markdown("##### 📅 Post Volume")
     st.caption(
         "Tracks the volume of **fan mentions, hashtags, and discussions** over time. "
-        "We group data by **Week** to smooth out daily noise, making it easier to spot real trends and momentum shifts."
+        "Data is grouped by **Week** to smooth out daily noise, making it easier to spot real trends and momentum shifts."
     )
     
     weekly_counts = filtered_df.set_index('date').resample('W').size().reset_index(name='count')
@@ -204,7 +204,7 @@ with chart2:
     
     # UPDATED CAPTION: Explicitly explains the weighting logic
     st.caption(
-        "A granular view of engagement quality. We apply a **weighted score** to prioritize high-effort interactions: "
+        "A granular view of engagement quality. A **weighted score** is applied to prioritize high-effort interactions: "
         "**Likes (1x)** < **Comments (2x)** < **Shares (3x)**. This reveals which brands are driving deep advocacy versus just passive reach."
     )
     
