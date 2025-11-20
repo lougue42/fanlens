@@ -294,20 +294,20 @@ if st.button("✨ Generate Report", type="primary"):
         
         **OUTPUT FORMAT (Strict Markdown):**
         
-        ### 📈 The Dominant Trend
-        (Synthesize the narrative arc. Does the 'Viral' story (Dataset 1) align with the 'Organic Community' sentiment (Dataset 2), or is there a disconnect?
-         *Example:* Are viral posts celebrating a win, while the community is complaining about the coach?
-         **Cite specific contrasting posts to prove the nuance.**)
+       ### 📈 The Dominant Trend
+        (Synthesize the narrative arc. Does the 'Viral' story (Dataset 1) align with the 'Organic Community' sentiment (Dataset 2)?
+         * **The Verdict:** (One sentence summary: Aligned or Disconnected?)
+         * **The Evidence:** (Cite specific contrasting posts to prove the nuance. Use blockquotes > for quotes.))
         
-       ### 🧠 Cultural Drivers
-        (Go beyond simple "Validation vs. Friction." Identify the specific **psychological trigger**.
-         *Examples:* Is it **Vindication** (proving doubters wrong), **Aspirational FOMO** (witnessing history), or **Defensive Pride** (protecting the reputation)?
-         Connect the specific engagement behaviors to this deeper emotional need.)
+        ### 🧠 The "Why" (Cultural Driver)
+        (Decode the emotional engine. Is this trend driven by **Validation** (fans projecting identity via Shares) or **Friction** (fans debating controversy via Comments)?
+         Use the **engagement metrics** to prove which specific emotion is fueling the algorithm.)
         
         ### 🎯 Strategic Opportunity
         (Identify a **Strategic Opening** or **Narrative Pivot**.
          Instead of dictating a specific post, define the *angle* the brand should adopt to align with (or correct) this sentiment.
-         *Example:* "Shift the narrative focus from 'team performance' to 'individual storytelling'" or "Validate the fans' excitement by officially acknowledging the specific viral moment.")
+         * **The Pivot:** (1-2 sentences on the new direction)
+         * **The Payoff:** (Why this will work for this specific audience))
         """
         
         with st.spinner(f"Analyzing Narrative Gaps for: {teams_list}..."):
