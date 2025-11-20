@@ -296,8 +296,13 @@ if st.button("✨ Generate Report", type="primary"):
         
       ### 📈 The Dominant Trend
         (Synthesize the narrative arc. Does the 'Viral' story (Dataset 1) align with the 'Organic Community' sentiment (Dataset 2)?
-         * **The Verdict:** (One sentence summary: Aligned or Disconnected?)
-         * **The Evidence:** (Group specific quotes by Team. e.g. **Team A:** "Quote" (Stats) vs. **Team B:** "Quote" (Stats). Use blockquotes >.))
+         * **The Verdict:** (One sentence summary.)
+         * **The Evidence:** (Group by team. Use a bullet point list for every single quote so they appear on separate lines. e.g.:
+           * **Team A:**
+             * > "Quote 1" (Stats)
+             * > "Quote 2" (Stats)
+           * **Team B:**
+             * > "Quote 1" (Stats)))
         
         ### 🧠 The "Why" (Cultural Driver)
         (Decode the emotional engine. Is this trend driven by **Validation** (fans projecting identity via Shares) or **Friction** (fans debating controversy via Comments)?
