@@ -317,6 +317,17 @@ if st.button("✨ Run Strategic Analysis", type="primary"):
                 st.markdown(response.text)
             except Exception as e:
                 st.error(f"Connection Error: {e}")
-# 7. DATA TRANSPARENCY
-with st.expander("📂 View Source Data Ledger"):
-    st.dataframe(filtered_df)
+# --- FOOTER & TRANSPARENCY ---
+st.markdown("---")
+
+# 1. The Disclaimer (Professional Context)
+st.caption(
+    "**Note:** This dashboard is a functional prototype demonstrating both quantitative + qualitative analytics architecture. "
+    "Due to enterprise API constraints (lack of Twitter access), data sources are currently simulated based on real-world 2025 WNBA narratives. "
+    "**Concept inspired by Breanna Barksdale's lecture on Brand Strategy.**"
+)
+
+# 2. The Raw Data (Hidden in the footer as an appendix)
+with st.expander("📂 View System Ledger (Raw Data)"):
+    st.markdown("### Source Data Verification")
+    st.dataframe(filtered_df, use_container_width=True)
