@@ -294,13 +294,15 @@ if st.button("✨ Generate Report", type="primary"):
         
         **OUTPUT FORMAT (Strict Markdown):**
         
-      ### 📈 The Dominant Trend
+    ### 📈 The Dominant Trend
         (Synthesize the narrative arc. Does the 'Viral' story (Dataset 1) align with the 'Organic Community' sentiment (Dataset 2)?
          * **The Verdict:** (One sentence summary.)
-         * **The Evidence:** (Group by team. Use a bullet point list for every single quote so they appear on separate lines. e.g.:
+         * **The Evidence:** (Group by team. Use a bullet point list.
+           **IMPORTANT: Limit to exactly 3 top quotes per team to keep it readable.**
            * **Team A:**
              * > "Quote 1" (Stats)
              * > "Quote 2" (Stats)
+             * > "Quote 3" (Stats)
            * **Team B:**
              * > "Quote 1" (Stats)))
         
