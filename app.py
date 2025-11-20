@@ -294,19 +294,21 @@ if st.button("✨ Generate Report", type="primary"):
         
         **OUTPUT FORMAT (Strict Markdown):**
         
-    ### 📈 The Dominant Trend
-        (Synthesize the narrative arc. Does the 'Viral' story (Dataset 1) align with the 'Organic Community' sentiment (Dataset 2)?
+   ### 📈 The Dominant Trend
+        (Synthesize the narrative. Does the 'Viral' story align with the 'Organic' sentiment?
          * **The Verdict:** (One sentence summary.)
-         * **The Evidence:** (Group by team. Use a bullet point list.
-           **IMPORTANT: Limit to exactly 3 top quotes per team to keep it readable.**
+         * **The Evidence:** (Group by team. Limit to Top 3 quotes per team.
+           **CRITICAL FORMATTING RULES:**
+           1. For **Viral Hits**, calculate and display the **Share Rate** (e.g. "Quote" (**45% Share Rate**)).
+           2. For **General Chatter**, do NOT show metrics or labels. Just show the quote.
+           
            * **Team A:**
-             * > "Quote 1" (Stats)
-             * > "Quote 2" (Stats)
-             * > "Quote 3" (Stats)
+             * > "Quote" (**44% Share Rate**)
+             * > "Quote" (Organic Sentiment)
            * **Team B:**
-             * > "Quote 1" (Stats)))
+             * > "Quote"))
         
-        ### 🧠 The "Why" (Cultural Driver)
+        ### 🧠 Cultural Drivers
         (Decode the emotional engine. Is this trend driven by **Validation** (fans projecting identity via Shares) or **Friction** (fans debating controversy via Comments)?
          Use the **engagement metrics** to prove which specific emotion is fueling the algorithm.)
         
