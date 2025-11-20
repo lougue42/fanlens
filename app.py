@@ -195,8 +195,16 @@ with chart1:
         line_shape="spline",
         render_mode="svg"
     )
-    # Apply the Brand Green color to the chart line/area
-    fig.update_traces(fill='tozeroy', line_color='#00CC96') 
+    
+    # --- UPDATED TOOLTIP (Clean Date & Volume) ---
+    # %{x|%b %d, %Y} = Formats date like "Sep 21, 2025"
+    # <extra></extra> = Removes the annoying "trace 0" box
+    fig.update_traces(
+        fill='tozeroy', 
+        line_color='#00CC96',
+        hovertemplate="<b>Week of %{x|%b %d, %Y}</b><br>Volume: %{y}<extra></extra>"
+    )
+    
     st.plotly_chart(fig, use_container_width=True)
 
 with chart2:
@@ -242,7 +250,6 @@ with chart2:
     st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("---")
-
 # 6. AI STRATEGIST (The "Why")
 st.subheader("🧠 Strategy Report") 
 st.info(
