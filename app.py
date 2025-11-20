@@ -114,11 +114,11 @@ except Exception as e:
 col1, col2 = st.columns([3, 1])
 with col1:
     
-    st.markdown("### Turning Viral Noise into Business Strategy.")
+    st.markdown("### Turning Viral Noise into Business Strategy")
     st.markdown("""
-    **The Problem:** In the WNBA's current hyper-growth cycle, standard metrics (Likes/Views) are vanity numbers. They fail to tell an agency if a viral moment is a **commercial opportunity** or a **reputational risk**.
+    **The Problem:** In the WNBA's current hyper-growth cycle, standard metrics such as Likes and Views are vanity numbers. They fail to tell an agency if a viral moment is a **commercial opportunity** or a **reputational risk**.
     
-    **The FanLens Solution:** This engine allows account managers to answer three critical client questions:
+    **The Solution:** This engine allows account managers to answer three critical client questions:
     1.  **💰 Sponsorship Validation:** Prove to brands that engagement is deep & emotional, not just passive scrolling.
     2.  **📉 Risk Detection:** Instantly spot negative sentiment shifts before they become PR crises.
     3.  **🛍️ Merch Prediction:** Identify rising cultural trends to capitalize on real-time demand.
