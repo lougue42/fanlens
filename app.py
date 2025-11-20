@@ -294,10 +294,10 @@ if st.button("✨ Generate Report", type="primary"):
         
         **OUTPUT FORMAT (Strict Markdown):**
         
-       ### 📈 The Dominant Trend
+      ### 📈 The Dominant Trend
         (Synthesize the narrative arc. Does the 'Viral' story (Dataset 1) align with the 'Organic Community' sentiment (Dataset 2)?
          * **The Verdict:** (One sentence summary: Aligned or Disconnected?)
-         * **The Evidence:** (Cite specific contrasting posts to prove the nuance. Use blockquotes > for quotes.))
+         * **The Evidence:** (Group specific quotes by Team. e.g. **Team A:** "Quote" (Stats) vs. **Team B:** "Quote" (Stats). Use blockquotes >.))
         
         ### 🧠 The "Why" (Cultural Driver)
         (Decode the emotional engine. Is this trend driven by **Validation** (fans projecting identity via Shares) or **Friction** (fans debating controversy via Comments)?
