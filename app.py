@@ -164,8 +164,8 @@ if not api_key:
     st.sidebar.warning("⚠️ Enter Consultant Key")
     api_key = st.sidebar.text_input("Gemini API Key", type="password")
 # 4. QUANTITATIVE METRICS
-st.subheader("📊 Market Signals (Quantitative)")
-st.caption("Real-time volume and engagement velocity.")
+st.subheader("📊 Engagement Overview")
+st.caption("Real-time volume and engagement velocity, visualized.")
 
 c1, c2, c3 = st.columns(3)
 c1.metric("Total Volume", len(filtered_df), help="Total posts in dataset.")
@@ -244,76 +244,76 @@ with chart2:
 st.markdown("---")
 
 # 6. AI STRATEGIST (The "Why")
-st.subheader("🧠 Strategic Decoder (Qualitative)")
+st.subheader("🧠 Strategy Report") 
 st.info(
-    "**Agency Insight:** This module analyzes the **Top 50 Viral Posts** to decode the cultural context. "
-    "It weighs the *type* of engagement (Share vs. Like) to distinguish between passive reach and active advocacy."
+    "**Agency Insight:** This module generates an instant **Gap Analysis**. It compares the 'Viral Hits' (what the algorithm loves) "
+    "against 'General Chatter' (what the community is actually feeling) to spot disconnects and opportunities."
 )
 
-if st.button("✨ Run Strategic Analysis", type="primary"):
+if st.button("✨ Generate Report", type="primary"):
     if not api_key:
         st.error("System Error: Missing API Access Key.")
     else:
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel('gemini-2.5-flash')
         
-        # 1. PREPARE DATA (Now including the Breakdown!)
+        # DATA PREP
         sorted_df = filtered_df.sort_values(by='engagement_score', ascending=False)
         
-        # We pass 'likes', 'comments', 'shares' so the AI can analyze the ratio
-        top_posts = sorted_df.head(50)[['text', 'likes', 'comments', 'shares']].to_string(index=False)
+        # 1. Viral Hits (Top 20)
+        top_posts = sorted_df.head(20)[['brand', 'text', 'likes', 'shares']].to_string(index=False)
         
-        general_sample = sorted_df.sample(min(50, len(sorted_df)))['text'].tolist()
-        general_text = "\n".join(general_sample)
+        # 2. General Chatter (Random 20)
+        general_sample = sorted_df.sample(min(20, len(sorted_df)))[['brand', 'text']].to_string(index=False)
         
-        # 2. DETERMINE MODE
         teams_list = ", ".join(selected_brand)
-        if len(selected_brand) > 1:
-            mode_instruction = f"User has selected MULTIPLE teams ({teams_list}). Compare their engagement styles."
+        
+        # CONTEXT LOGIC
+        if len(selected_brand) > 2:
+            strategy_mode = "COMPARATIVE RANKING. Focus on the disparity between the market leader and the challengers."
         else:
-            mode_instruction = f"User has selected ONE team ({teams_list}). Deep dive into their specific fan behaviors."
+            strategy_mode = "DEEP DIVE. Focus on the specific emotional nuance of this specific fanbase."
 
-        # 3. THE "INTERACTION INTELLIGENCE" PROMPT
         prompt = f"""
-        Act as a Senior Data Strategist at Lou's Agency.
+        Act as a Lead Strategist at Lou's Agency.
         
-        CONTEXT:
-        {mode_instruction}
+        STRATEGY MODE: {strategy_mode}
+        TEAMS ANALYZED: {teams_list}
         
-        DATASET 1: VIRAL HITS (Top posts by engagement)
+        DATASET 1: VIRAL HITS (High Engagement)
         {top_posts}
         
-        DATASET 2: GENERAL CHATTER (Random sample)
-        {general_text}
+        DATASET 2: GENERAL CHATTER (Organic/Random)
+        {general_sample}
         
-        **ANALYSIS LOGIC (The "Commitment Index"):**
-        * High **Share Ratio** (>15%) = Advocacy & Virality.
-        * High **Comment Ratio** (>5%) = Debate & Friction.
-        * High **Like Volume** with low ratios = Passive Approval.
+        **LOGIC FRAMEWORK (The Commitment Index):**
+        * High Share Counts = **Advocacy** (The narrative is spreading).
+        * High General Noise without Virality = **Stagnation**.
         
-        Analyze the text AND the engagement ratios to decode the cultural moment.
+        Produce a strategic memo using the structure below.
         
-        **IMPORTANT RULES:**
-        1. **Format Ratios as Percentages:** (e.g., convert 0.128 to **12.8%**).
-        2. **Be "Skimmable":** Use **bolding** for key metrics, specific quotes, and team names.
-        3. DO NOT include an introduction. Start directly with the headers.
-        
-        Output structure:
+        **OUTPUT FORMAT (Strict Markdown):**
         
         ### 📈 The Dominant Trend
-        (What is the biggest topic? explicitly mention if it is being driven by **Debate** (Comments) or **Hype** (Shares). Cite specific viral posts.)
+        (Synthesize the narrative arc. Does the 'Viral' story (Dataset 1) align with the 'Organic Community' sentiment (Dataset 2), or is there a disconnect?
+         *Example:* Are viral posts celebrating a win, while the community is complaining about the coach?
+         **Cite specific contrasting posts to prove the nuance.**)
         
-        ### 🧠 The "Why" (Cultural Driver)
-        (Why is this trending? Is it Pride, Anger, or FOMO? Use the **engagement %** to prove your point mathematically.)
+       ### 🧠 Cultural Drivers
+        (Go beyond simple "Validation vs. Friction." Identify the specific **psychological trigger**.
+         *Examples:* Is it **Vindication** (proving doubters wrong), **Aspirational FOMO** (witnessing history), or **Defensive Pride** (protecting the reputation)?
+         Connect the specific engagement behaviors to this deeper emotional need.)
         
         ### 🎯 Strategic Opportunity
-        (Actionable advice. e.g., "Since Share Rate is high (25%), launch a merch drop" or "Since Comment Rate is high (10%), start a poll.")
+        (Identify a **Strategic Opening** or **Narrative Pivot**.
+         Instead of dictating a specific post, define the *angle* the brand should adopt to align with (or correct) this sentiment.
+         *Example:* "Shift the narrative focus from 'team performance' to 'individual storytelling'" or "Validate the fans' excitement by officially acknowledging the specific viral moment.")
         """
         
-        with st.spinner(f"Decoding engagement signals for: {teams_list}..."):
+        with st.spinner(f"Analyzing Narrative Gaps for: {teams_list}..."):
             try:
                 response = model.generate_content(prompt)
-                st.success("Analysis Complete")
+                st.success("Strategic Memo Generated")
                 st.markdown(response.text)
             except Exception as e:
                 st.error(f"Connection Error: {e}")
