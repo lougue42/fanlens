@@ -47,11 +47,11 @@ def apply_custom_style():
             box-shadow: 0 8px 24px rgba(0, 204, 150, 0.2);
         }
         
-        /* KEY METRIC LABEL STYLE */
+        /* KEY METRIC LABEL STYLE (Updated for Mobile Readability) */
         [data-testid="stMetricLabel"] {
-            font-size: 14px;
-            color: #9CA3AF;
-            font-weight: 500;
+            font-size: 15px;      /* Slightly larger */
+            color: #F3F4F6;       /* Bright White-Grey (High Contrast) */
+            font-weight: 600;     /* Bolder text */
         }
         [data-testid="stMetricValue"] {
             font-size: 32px;
